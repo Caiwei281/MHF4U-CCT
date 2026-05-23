@@ -1,918 +1,610 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>My Time in Malaysia</title>
+    <title>My Time in Malaysia</title>
 
-  <style>
+    <!-- This forces every link on the page to open in a new tab -->
+    <base target="_blank">
+    
+    <style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      font-family: Arial, sans-serif;
-
-      background:
-        radial-gradient(circle at top left, #ffb3d9 0%, transparent 30%),
-        radial-gradient(circle at bottom right, #ffcce6 0%, transparent 30%),
-        linear-gradient(135deg, #fff0f7, #ffe6f2);
-
-      min-height:100vh;
-      padding:40px 20px;
-      color:#4a2340;
-    }
-
-    /* MAIN HEADING */
-
-    .main-heading{
-      text-align:center;
-      margin-bottom:55px;
-    }
-
-    .main-heading h1{
-      font-size:clamp(3rem, 7vw, 6rem);
-      color:#ff2f92;
-      margin-bottom:15px;
-      letter-spacing:2px;
-    }
-
-    .main-heading p{
-      max-width:700px;
-      margin:auto;
-      line-height:1.8;
-      color:#7a4762;
-      font-size:1.05rem;
-    }
-
-    /* GRID LAYOUT */
-
-    .grid-container{
-      width:min(1400px, 100%);
-      margin:auto;
-
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:30px;
-    }
-
-    /* CARD */
-
-    .card{
-      background:rgba(255,255,255,0.28);
-
-      backdrop-filter:blur(18px);
-
-      border:1px solid rgba(255,255,255,0.45);
-
-      border-radius:30px;
-
-      padding:28px;
-
-      box-shadow:0 10px 25px rgba(255,105,180,0.15);
-
-      transition:0.35s ease;
-    }
-
-    .card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 18px 35px rgba(255,105,180,0.22);
-    }
-
-    /* SECTION TITLE */
-
-    .card h2{
-      color:#ff2f92;
-      margin-bottom:20px;
-      font-size:1.8rem;
-    }
-
-    /* GRAPH SPACE */
-
-    .graph-space{
-      width:100%;
-      aspect-ratio:16/9;
-
-      border-radius:22px;
-      overflow:hidden;
-
-      border:3px dashed #ff66b3;
-
-      background:white;
-
-      margin-bottom:25px;
-
-      box-shadow:0 8px 20px rgba(255,105,180,0.12);
-    }
-
-    .graph-space iframe{
-      width:100%;
-      height:100%;
-      border:none;
-    }
-
-    /* SUBHEADINGS */
-
-    .subheading{
-      color:#d63384;
-      font-size:1.1rem;
-      font-weight:bold;
-
-      margin-top:18px;
-      margin-bottom:10px;
-    }
-
-    /* TEXT */
-
-    .card p{
-      line-height:1.8;
-      color:#5f3550;
-      font-size:0.97rem;
-    }
-
-    /* TABLET */
-
-    @media(max-width:1000px){
-
-      .grid-container{
-        grid-template-columns:repeat(2, 1fr);
+      *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
       }
-
-    }
-
-    /* PHONE */
-
-    @media(max-width:700px){
+      
+      /* Automatically indents the first line of every paragraph */
+      p {
+        text-indent: 40px; 
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      /* Overrides the indent for any paragraph with this class */
+      p.no-indent {
+        text-indent: 0;
+      }
 
       body{
-        padding:25px 15px;
+        font-family: Times New Roman, sans-serif;
+
+        background:
+          radial-gradient(circle at top left, #ffb3d9 0%, transparent 30%),
+          radial-gradient(circle at bottom right, #ffcce6 0%, transparent 30%),
+          linear-gradient(135deg, #fff0f7, #ffe6f2);
+
+        min-height:100vh;
+        padding:40px 20px;
+        color:#4a2340;
       }
 
+      /* MAIN HEADING */
+      .main-heading{
+        text-align:center;
+        margin-bottom:55px;
+      }
+
+      .main-heading h1{
+        font-size:clamp(3rem, 7vw, 6rem);
+        color:#ff2f92;
+        margin-bottom:15px;
+        letter-spacing:2px;
+      }
+
+      .main-heading p{
+        max-width:700px;
+        margin:auto;
+        line-height:1.8;
+        color:#7a4762;
+        font-size:1.05rem;
+      }
+
+      /* GRID LAYOUT */
       .grid-container{
-        grid-template-columns:1fr;
+        width:min(1400px, 100%);
+        margin:auto;
+
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        gap:30px;
       }
 
+      /* CARD */
       .card{
-        padding:22px;
+        background:rgba(255,255,255,0.28);
+        backdrop-filter:blur(18px);
+        border:1px solid rgba(255,255,255,0.45);
+        border-radius:30px;
+        padding:28px;
+        box-shadow:0 10px 25px rgba(255,105,180,0.15);
+        transition:0.35s ease;
       }
+
+      .card:hover{
+        transform:translateY(-6px);
+        box-shadow:0 18px 35px rgba(255,105,180,0.22);
+      }
+
+      /* SECTION TITLE */
 
       .card h2{
-        font-size:1.5rem;
+        color:#ff2f92;
+        margin-bottom:20px;
+        font-size:1.8rem;
       }
 
-    }
+      /* GRAPH SPACE */
 
-  </style>
-</head>
+      .graph-space{
+        width:100%;
+        aspect-ratio:16/9;
+        border-radius:22px;
+        overflow:hidden;
+        border:3px dashed #ff66b3;
+        background:white;
+        margin-bottom:25px;
+        box-shadow:0 8px 20px rgba(255,105,180,0.12);
+      }
 
-<body>
+      .graph-space iframe{
+        width:100%;
+        height:100%;
+        border:none;
+      }
 
-  <!-- MAIN HEADING -->
+      /* SUBHEADINGS */
 
-  <section class="main-heading">
+      .subheading{
+        color:#d63384;
+        font-size:1.1rem;
+        font-weight:bold;
 
-    <h1>My Time in Malaysia</h1>
+        margin-top:18px;
+        margin-bottom:10px;
+      }
 
-    <p>
-      A surreal pink-themed mathematical exploration featuring
-      graph transformations, domain and range analysis,
-      and interactive Desmos visualizations.
-    </p>
+      /* TEXT */
 
-  </section>
+      .card p{
+        line-height:1.8;
+        color:#5f3550;
+        font-size:0.97rem;
+      }
 
-  <!-- 3 × 3 RESPONSIVE GRID -->
+      /* TABLET */
 
-  <section class="grid-container">
+      @media(max-width:1000px){
 
-    <!-- CARD 1 -->
-    <div class="card">
+        .grid-container{
+          grid-template-columns:repeat(2, 1fr);
+        }
 
-      <h2><a href="https://www.desmos.com/calculator/1tffio7fmj">Cosine graph</a>
-</h2>
+      }
 
-      <div class="graph-space">
-        <iframe src="https://www.desmos.com/calculator/1tffio7fmj?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+      /* PHONE */
+
+      @media(max-width:700px){
+
+        body{
+          padding:25px 15px;
+        }
+
+        .grid-container{
+          grid-template-columns:1fr;
+        }
+
+        .card{
+          padding:22px;
+        }
+
+        .card h2{
+          font-size:1.5rem;
+        }
+
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+    <!-- MAIN HEADING -->
+
+    <section class="main-heading">
+
+      <h1>My Time in Malaysia</h1>
+
+      <p><strong>
+        Our surreal, pink-themed photo album of mathematical exploration featuring
+        graph transformations, domain and range analysis,
+        and interactive Desmos visualizations.</strong>
+      </p>
+
+    </section>
+
+    <!-- 3 × 3 RESPONSIVE GRID -->
+
+    <section class="grid-container">
+
+      <!-- CARD 1 -->
+      <div class="card">
+
+        <h2><a href="https://www.desmos.com/calculator/1tffio7fmj">Cosine Function</a>
+        </h2>
+
+        <div class="graph-space">
+          <iframe src="https://www.desmos.com/calculator/1tffio7fmj?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+        </div>
+
+        <div class="subheading">Transformation</div>
+
+        <p class="no-indent">
+          I chose this photo taken in Subang Jaya, Malaysia, because it captures a fun, casual moment with my friend, and the smooth, wavy curve formed by our bodies lying back‑to‑back perfectly matches the shape of a cosine function. I started with the parent function <var>𝑦 = cos(𝑥)</var>, which has a regular, symmetrical wave shape. Comparing it to the curve in the image, I observed the wave was vertically stretched, shifted horizontally to the right, and translated upward — no reflection was needed, as the curve rose and fell in the same direction as the original cosine graph.
+        </p>
+
+        <p>
+          At first, it was difficult to determine the vertical stretch factor because the curve was not positioned near the origin, making its amplitude hard to measure accurately. To simplify, I mentally shifted the curve so its midline aligned with the 𝑥‑axis, allowing me to focus only on its height and shape without the complexity of translations. By comparing the maximum and minimum heights, I determined a vertical stretch by a factor of 2 fit best, and refined this value until the curve closely overlapped the outline of our bodies in the photo.
+        </p>
+
+        <p>
+          Once the amplitude was set, I moved the curve back into its correct position: shifted 1 unit to the right to align the peak of the wave with the highest point of the curve, then shifted 3 units upward to centre the wave properly. This resulted in my final function: <var><strong>𝑦 = 2 cos(𝑥 - 1) + 3</strong></var>
+        </p>
+
+        <p class="no-indent">
+          <br><strong>Summary of Transformations:</strong>
+          <br>- Vertical stretch by a factor of 2 → <var>2 cos(𝑥)</var>
+          <br>- Horizontal translation 1 unit to the right → <var>2 cos(𝑥 - 1)</var>
+          <br>- Vertical translation 3 units upward → <var>2 cos(𝑥 - 1) + 3</var>
+        </p>
+
+        <div class="subheading">Domain and Range</div>
+
+        <p class="no-indent">
+          The domain of my function is <strong>D<var>:{𝑥 ∈ ℝ|−6.835 ≤ 𝑥 ≤ 8.33}</strong></var>, restricted to the visible portion of the curve formed by our bodies in the photograph. The key reference points from the graph are (-9.1,1.32), (-2.14,3), (1, 5), and (10.42,1), which define the start, midline, peak, and end of the visible curve. Ideally, I would have captured the full periodic wave to model its complete shape, but this domain covers only the section shown — so the model applies only to this visible part.
+        </p>
+
+        <p>
+          The parent function <var>y = cos(𝑥)</var> has a domain <strong>D<var>:{𝑥 ∈ ℝ}</strong></var> and range <strong>R<var>:{𝑦 ∈ ℝ|−1 ≤ y ≤ 1}</strong></var>; it is defined for all real 𝑥-values and oscillates continuously between -1 and 1, with no asymptotes or discontinuities. My transformed function also has no undefined points, and within this restricted domain, the curve remains fully continuous — so I do not need to consider discontinuities when describing the domain and range for this situation.  
+        </p>
+        
+        <p>
+          Since the cosine function is smooth and continuous over this entire interval, the range can be determined by evaluating the function at the domain’s endpoints and its maximum/minimum values. The lowest values are approximately 1.00–1.32, and the highest value at the peak (1,5) is 5.00, giving an overall range of approximately <strong>R<var>:{𝑦 ∈ ℝ|1.00 ≤ 𝑦 ≤ 5.00}</strong></var>.
+        </p>
+        
       </div>
+      <!-- CARD 2 -->
+      <div class="card">
 
-      <div class="subheading">Transformation</div>
+        <h2><a href="https://www.desmos.com/calculator/glefpgb9ka">Tangent Function</a></h2>
 
-      <p>
-I chose this photo taken in Subang Jaya, Malaysia, because it captures a fun, casual moment with my friend, and the smooth, wavy curve formed by our bodies lying back‑to‑back perfectly matches the shape of a cosine function. I started with the parent function y = cos(x), which has a regular, symmetrical wave shape. Comparing it to the curve in the image, I observed the wave was vertically stretched, shifted horizontally to the right, and translated upward — no reflection was needed, as the curve rose and fell in the same direction as the original cosine graph.
-      </p>
+        <div class="graph-space">
+          <iframe src="https://www.desmos.com/calculator/glefpgb9ka?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+        </div>
 
-      <p>
-At first, it was difficult to determine the vertical stretch factor because the curve was not positioned near the origin, making its amplitude hard to measure accurately. To simplify, I mentally shifted the curve so its midline aligned with the x‑axis, allowing me to focus only on its height and shape without the complexity of translations. By comparing the maximum and minimum heights, I determined a vertical stretch by a factor of 2 fit best, and refined this value until the curve closely overlapped the outline of our bodies in the photo.
-      </p>
+        <div class="subheading">Transformation</div>
 
-      <p>
-Once the amplitude was set, I moved the curve back into its correct position: shifted 1 unit to the right to align the peak of the wave with the highest point of the curve, then shifted 3 units upward to centre the wave properly. This resulted in my final function: 
+        <p class="no-indent">
+          I chose this fun photo taken in Subang Jaya, Malaysia, because the smooth, sweeping curve my friend and I made while lying side‑by‑side looks exactly like the shape of a tangent graph — it’s such a cool way to turn our relaxed pose into a math model! I started by looking at the parent tangent function, <var>𝑦 = tan(𝑥)</var>. It has a very distinct shape: it rises steeply from left to right, repeats every 180 degree, and has vertical asymptotes — invisible lines where the graph shoots upward or downward and is not defined.
+        </p>
 
-y = 2cos(x - 1) + 3
-      </p>
+        <p>
+          Compared to that parent graph, the curve we formed was much gentler, not nearly as steep, taller overall, shifted to the right, and sat lower down. So I adjusted the parent function step‑by‑step to match perfectly. First, I stretched it vertically by a factor of 5 — this made it taller and less steep, matching the gentle slope of our bodies. Next, I shifted the whole graph 2 units to the right so its centre lined up exactly with the highest point of our curve. Finally, I moved it 2 units downward so it sat at the correct height to trace our pose. The final function I ended up with is: <var><strong>𝑦 = 5 tan(𝑥 - 2) - 2</strong></var>
+        </p>
 
-      <p>
-Summary of Transformations: 
+        <p class="no-indent">
+          <br><strong>Summary of Transformations:</strong>
+          <br>- Vertical stretch by a factor of 5: <var>𝑦 = 5 tan(𝑥)</var>
+          <br>- Horizontal translation 2 units right: <var>𝑦 = 5 tan(𝑥 - 2)</var>
+          <br>- Vertical translation 2 units down: <var>𝑦 = 5 tan(𝑥 - 2) - 2</var> 
+        </p>
 
-  
+        <div class="subheading">Domain and Range</div>
 
-- Vertical stretch by a factor of 2 → 2cos(x) 
+        <p class="no-indent">
+          I titled my graph Body Length as a Function of Horizontal Distance Between the Two Students. The 𝑦‑axis represents the horizontal distance between us, measured in units, while the 𝑦‑axis shows the corresponding vertical height or length of our bodies forming the curve.
+        </p>
 
-- Horizontal translation 1 unit to the right → 2cos(x - 1) 
+        <p>
+          Looking again at the parent tangent function <var>𝑦 = tan(𝑥)</var>: its domain includes all real numbers except <var>𝑥 = π/2+nπ</var>, where those vertical asymptotes occur — at these points, the function has no defined value and is discontinuous. Its range covers all real numbers from negative infinity to positive infinity, meaning it can go infinitely low or infinitely high.
+        </p>
 
-- Vertical translation 3 units upward → 2cos(x - 1) + 3
-      </p>
+        <p>
+          For my transformed function, I only used the smooth, continuous section visible in the photo — my restricted domain is <strong>D<var>:{𝑥 ∈ ℝ|−7.04 ≤ 𝑥 ≤ 2.38}</var></strong>. This spans 9.42 horizontal units, and importantly — the asymptotes of the tangent graph lie far outside this interval — so there are no breaks, gaps, or undefined values to worry about in my model. Unlike the parent function that stretches infinitely, the range of my graph is limited to the actual height of our curve, <strong>R<var>:{𝑦 ∈ ℝ|−16 ≤ 𝑦 ≤ 7}</var></strong>. This covers 23 vertical units, from the lowest point of our pose all the way up to its highest point — perfectly matching how our bodies curve upward and then back down.
+        </p>
 
-      <div class="subheading">Domain and Range</div>
+        <p>
+          Titled Body Length as a Function of Horizontal Distance Between the Two Students, this graph uses <var>𝑦 = 5 tan(𝑥 - 2) - 2</var> to model our pose. Compared to the steep, infinitely extending parent tangent function y = tan(x), my transformed version is gentler, shifted, and restricted to a domain from -7.04 to 2.38 and a range from -16 to 7. This shows how simple changes can adapt a parent graph to fit real‑world shapes perfectly!
+        </p>
 
-      <p>
-       The domain of my function is D: 
-├{x∈R|−6.835≤x≤8.33┤} 
-
- 
- 
-, restricted to the visible portion of the curve formed by our bodies in the photograph. The key reference points from the graph are (-9.1,1.32), (-2.14,3), (1, 5), and (10.42,1), which define the start, midline, peak, and end of the visible curve. Ideally, I would have captured the full periodic wave to model its complete shape, but this domain covers only the section shown — so the model applies only to this visible part.
-      </p>
-
-      <p>
-     The parent function y = cos(x) has a domain D: 
-{x∈R}
-x
-∈
-ℝ
- 
- and range R: {
-y∈R|−1≤y≤1
- 
-} ; it is defined for all real x-values and oscillates continuously between -1 and 1, with no asymptotes or discontinuities. My transformed function also has no undefined points, and within this restricted domain, the curve remains fully continuous — so I do not need to consider discontinuities when describing the domain and range for this situation.  
-      </p>
-
-      <p>
-    Since the cosine function is smooth and continuous over this entire interval, the range can be determined by evaluating the function at the domain’s endpoints and its maximum/minimum values. The lowest values are approximately 1.00–1.32, and the highest value at the peak (1,5) is 5.00, giving an overall range of approximately: 
-
-R:{
-y
-∈
-ℝ
-1
-.
-00
-≤
-y
-≤
-5
-.
-00
- 
-}   
-      </p>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="card">
-
-      <h2><a href="https://www.desmos.com/calculator/qepbpensc0">Polynomial Function-Quartic Function</a></h2>
-
-      <div class="graph-space">
-        <iframe src="https://www.desmos.com/calculator/qepbpensc0?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
       </div>
-
-      <div class="subheading">Transformation</div>
-
-      <p>
-      I chose this photograph taken in Subang Jaya, Malaysia, because the smooth, symmetrical arch formed when my friend and I joined our hands overhead creates a perfect downward‑opening curve — ideal for modelling with a fourth‑degree polynomial with multiple terms. I began with the parent quartic function y = x^4, which forms a narrow, upward‑opening curve. Comparing it to the image, the arch is much wider, opens downward, sits far below the origin, and spans a clear horizontal distance and vertical height — this told me a reflection, vertical compression, and downward shift were needed to match its shape and position.  
-      </p>
       
-      <p>
-      At first, it was tricky to determine the compression factor because the curve was far from the origin, making its steepness hard to measure. To simplify, I mentally moved the curve so its highest point sat on the x-axis, letting me focus only on its width and curvature. I found that compressing vertically by a factor of 
-1/30
+      <!-- CARD 3 -->
+      <div class="card">
 
- 
-and reflecting across the x-axis gave the correct gentle downward curve, resulting in y = 
-−1/30x^4
- 
-. I then shifted the entire curve 5 units downward so its highest point aligned exactly with our joined hands in the photo. This gave my final function: 
+        <h2><a href="https://www.desmos.com/calculator/qepbpensc0">Polynomial Function-Quartic</a></h2>
 
-  
+        <div class="graph-space">
+          <iframe src="https://www.desmos.com/calculator/qepbpensc0?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+        </div>
 
-  
+        <div class="subheading">Transformation</div>
+        
+        <p class="no-indent">
+          I chose this photograph taken in Subang Jaya, Malaysia, because the smooth, symmetrical arch formed when my friend and I joined our hands overhead creates a perfect downward‑opening curve — ideal for modelling with a fourth‑degree polynomial with multiple terms. I began with the parent quartic function <var>𝑦 = 𝑥⁴</var>, which forms a narrow, upward‑opening curve. Comparing it to the image, the arch is much wider, opens downward, sits far below the origin, and spans a clear horizontal distance and vertical height — this told me a reflection, vertical compression, and downward shift were needed to match its shape and position.  
+        </p>
 
-y = 
-−1/30x^4−5
+        <p>
+          At first, it was tricky to determine the compression factor because the curve was far from the origin, making its steepness hard to measure. To simplify, I mentally moved the curve so its highest point sat on the x-axis, letting me focus only on its width and curvature. I found that compressing vertically by a factor of 1⁄30 and reflecting across the 𝑥-axis gave the correct gentle downward curve, resulting in <var>𝑦 = -(1⁄30)𝑥⁴</var>. I then shifted the entire curve 5 units downward so its highest point aligned exactly with our joined hands in the photo. This gave my final function: <strong><var>𝑦 = -(1⁄30)𝑥⁴ − 5</var></strong>
+        </p>
+        
+        <p class="no-indent">
+          <br><strong>Summary of Transformations:</strong>
+          <br>-Reflection across the 𝑥-axis: <var>𝑦 = -𝑥⁴</var>
+          <br>-Vertical compression by a factor of 1⁄30: <var>𝑦 = −(1⁄30)𝑥⁴</var>
+          <br>-Vertical translation 5 units downward: <var>y = −(1⁄30)𝑥⁴ − 5</var>
+        </p>
+        
+        <div class="subheading">Domain and Range</div>
 
-      </p>
+        <p class="no-indent">
+          The domain of my function, defined by the total horizontal distance covered by the visible arch in the photograph, is <strong>D<var>:{𝑥 ∈ ℝ|−4.228 ≤ 𝑥 ≤ 4.234}</var></strong>. This interval spans approximately 8.46 units horizontally, matching the full width of the arch from one side to the other. Ideally, I would have captured the full extent of the curve, but this restricted domain accurately represents only the portion visible in the image — so the model applies only to this section.
+        </p>
 
-      <p>
-Summary of Transformations 
+        <p>
+          The parent polynomial function <var>𝑦 = 𝑥⁴</var> has a domain <strong>D<var>:{𝑥 ∈ ℝ}</var></strong> and range <strong>R<var>:{𝑦 ∈ ℝ|y ≥ 0}</var></strong>; polynomials are defined and continuous for all real 𝑥-values, with no asymptotes, gaps, or discontinuities. My transformed polynomial function is also defined everywhere, and within this restricted domain, the curve remains fully smooth and continuous — no discontinuities need to be considered when analysing this situation.
+        </p>
 
-  
-
- Reflection across the x-axis: y = 
-−x^4
-
- 
- 
-
- Vertical compression by a factor of 1/30
-
-
- 
-: y = 
-−1/30x^4
-
- 
- 
- Vertical translation 5 units downward: y = 
-−1/30x^4−5
-−
-1
-/
-30
-x^
-4
-−
-5
-      
-      </p>
-      <div class="subheading">Domain and Range</div>
-
-      <p>
-        The domain of my function, defined by the total horizontal distance covered by the visible arch in the photograph, is: 
-
-  
-
-  
-
-D:
-{x∈R|−4.228≤x≤4.234}
-
- 
- 
-
-  
-
-  
-
-This interval spans approximately 8.46 units horizontally, matching the full width of the arch from one side to the other. Ideally, I would have captured the full extent of the curve, but this restricted domain accurately represents only the portion visible in the image — so the model applies only to this section.
-      </p>
-
-      <p>
-        The parent polynomial function y
-=x^4
-
- 
- has a domain D:
-{x∈R}
-
- 
- and range R: 
-{y∈R|y≥0}
-
- 
-; polynomials are defined and continuous for all real x-values, with no asymptotes, gaps, or discontinuities. My transformed polynomial function is also defined everywhere, and within this restricted domain, the curve remains fully smooth and continuous — no discontinuities need to be considered when analysing this situation.
-      </p>
-
-      <p>
-        Since polynomial functions are continuous over any closed interval, the range is determined by the vertical height of the curve: the lowest y-value is -15.8 at both outer ends of the arch, and the highest value at the vertex (0,-5) is exactly -5, giving a total vertical range of 10.8 units. Therefore, the range of my function is: 
-
-  
-
-  
-
-R: 
-{y∈R|−15.8≤y≤−5}
-y
-∈
-ℝ
-−
-15
-.
-8
-≤
-y
-≤
-−
-5
-      </p>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="card">
-
-      <h2><a href="https://www.desmos.com/calculator/glefpgb9ka">Tangent graph</a></h2>
-
-      <div class="graph-space">
-     <iframe src="https://www.desmos.com/calculator/glefpgb9ka?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+        <p>
+          Since polynomial functions are continuous over any closed interval, the range is determined by the vertical height of the curve: the lowest y-value is -15.8 at both outer ends of the arch, and the highest value at the vertex (0,-5) is exactly -5, giving a total vertical range of 10.8 units. Therefore, the range of my function is <strong>R<var>:{𝑦 ∈ ℝ|−15.8 ≤ y ≤ −5}</var></strong>
+        </p>
+        
       </div>
 
-      <div class="subheading">Transformation</div>
+      <!-- CARD 4 -->
+      <div class="card">
 
-      <p>
-       I chose this fun photo taken in Subang Jaya, Malaysia, because the smooth, sweeping curve my friend and I made while lying side‑by‑side looks exactly like the shape of a tangent graph — it’s such a cool way to turn our relaxed pose into a math model! I started by looking at the parent tangent function, y = tan(x). It has a very distinct shape: it rises steeply from left to right, repeats every 180 degree, and has vertical asymptotes — invisible lines where the graph shoots upward or downward and is not defined.
-      </p>
+        <h2><a href="https://www.desmos.com/calculator/rkosx63b4n">Exponential Function</a></h2>
 
-      <p>
-      Compared to that parent graph, the curve we formed was much gentler, not nearly as steep, taller overall, shifted to the right, and sat lower down. So I adjusted the parent function step‑by‑step to match perfectly. First, I stretched it vertically by a factor of 5 — this made it taller and less steep, matching the gentle slope of our bodies. Next, I shifted the whole graph 2 units to the right so its centre lined up exactly with the highest point of our curve. Finally, I moved it 2 units downward so it sat at the correct height to trace our pose. The final function I ended up with is: 
+        <div class="graph-space">
+          <iframe src="https://www.desmos.com/calculator/rkosx63b4n?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe> 
+        </div>
 
-  
+        <div class="subheading">Transformation</div>
 
-  
+        <p class="no-indent">
+          I chose this photo because it represents one of my memorable experiences studying in Malaysia at Sunway College. In the image, one student is passing a phone to another student, symbolizing teamwork, friendship, sharing information, helping and supporting each other during college life. The curve formed by the arms and the phone connection reminded me of an exponential function, so I used the parent function <var>𝑦 = 2ˣ</var> as my starting point. After comparing the direction of the curve in the photograph with the parent function, I noticed that the graph needed to be reflected because the original exponential graph increases from left to right, while the curve in my image decreases. To make the graph fit the image more accurately, I adjusted the function by introducing a fraction coefficient. Therefore, I modified the function to <var>𝑦 = (½)ˣ</var> to match the direction of the graph.
+        </p>
+        
+        <p>
+          At first, it was difficult to make the graph match the curve formed by the arms of my friend and me because the original exponential function was too steep compared to the shape in the photograph. To solve this, I experimented with fractional coefficients and applied translations to reduce the steepness of the graph and better align it with the position of our arms. After several adjustments, I found values that allowed the curve to fit the image more naturally and represent a moment of connection and support between the two of us at Sunway College. This resulted in the function <strong><var>𝑦 = (7⁄10)ˣ + ⅘</var></strong>, which closely models the position and angle of our arms while passing the phone at Sunway College.
+        </p>
+        
+        <p class="no-indent">
+          <br><strong>Summary of Transformations:</strong>
+          <br>・Vertical compression by a factor of 7⁄10 → <var>(7⁄10)ˣ</var>
+          <br>・Vertical translation upward by ⅘ → <var>7/10(2ˣ) + ⅘</var>
+        </p>
+        
+        <div class="subheading">Domain and Range</div>
+        
+        <p class="no-indent">
+          The domain of my function is <strong>D<var>:{𝑥 ∈ ℝ|-5.07 ≤ 𝑥 ≤ 1.8}</var></strong>. I restricted the domain so that the graph only modelled the visible portion of the curve formed by the arms in the photograph. Since the exponential model was created specifically to represent the interaction between my friend and me while passing the phone at Sunway College, the function is only intended to describe the visible section shown in the image.
+        </p>
+        
+        <p>
+          Because the graph is linear and continuous, the range can be determined by evaluating the function at the endpoints of the domain. Using the function of <var>𝑦 = (7⁄10)ˣ + ⅘</var>, I obtained the approximate values: at 𝑥 = -5.07, 𝑦 ≈ 6.9 and at 𝑥 = 1.8, 𝑦 ≈ 1.33. Therefore, the range of the function is, approximately, <strong>R<var>:{𝑦 ∈ ℝ|1.33 ≤ y ≤ 6.86}</var></strong>. This means the model is only valid for the visible interaction captured in the photograph rather than the entire exponential function.
+        </p>
 
-y = 5tan(x - 2) - 2 
-
-  
-
-  
-
-Summary of Transformations 
-
-  
-
-- Vertical stretch by a factor of 5: y = 5tan(x) 
-
-- Horizontal translation 2 units right: y = 5tan(x - 2) 
-
-- Vertical translation 2 units down: y = 5tan(x - 2) - 2 
-      </p>
-
-      <div class="subheading">Domain and Range</div>
-
-      <p>
-       I titled my graph Body Length as a Function of Horizontal Distance Between the Two Students. The x‑axis represents the horizontal distance between us, measured in units, while the y‑axis shows the corresponding vertical height or length of our bodies forming the curve.
-      </p>
-
-      <p>
-       Looking again at the parent tangent function y = tan(x): its domain includes all real numbers except x =
-π/2+nπ
- 
-, where those vertical asymptotes occur — at these points, the function has no defined value and is discontinuous. Its range covers all real numbers from negative infinity to positive infinity, meaning it can go infinitely low or infinitely high.
-      </p>
-
-      <p>
-       For my transformed function, I only used the smooth, continuous section visible in the photo — my restricted domain is: 
-
-  
-
-  
-
-D: 
-{x∈R|−7.04≤x≤2.38|}
- 
- 
-
-  
-
-  
-
-This spans 9.42 horizontal units, and importantly — the asymptotes of the tangent graph lie far outside this interval — so there are no breaks, gaps, or undefined values to worry about in my model. 
-
-  
-
-Unlike the parent function that stretches infinitely, the range of my graph is limited to the actual height of our curve: 
-
-  
-
-  
-
-R: 
-{y∈R|−16≤y≤7|}
- 
- 
-
-  
-
-  
-
-This covers 23 vertical units, from the lowest point of our pose all the way up to its highest point — perfectly matching how our bodies curve upward and then back down.
-      </p>
-
-      <p>
-       Titled Body Length as a Function of Horizontal Distance Between the Two Students, this graph uses y = 5tan(x - 2) - 2 to model our pose. Compared to the steep, infinitely extending parent tangent function y = tan(x), my transformed version is gentler, shifted, and restricted to a domain from -7.04 to 2.38 and a range from -16 to 7. This shows how simple changes can adapt a parent graph to fit real‑world shapes perfectly!
-      </p>
-
-    </div>
-
-    <!-- CARD 4 -->
-    <div class="card">
-
-      <h2><a href="https://www.desmos.com/calculator/rkosx63b4n">Exponential Function</a></h2>
-
-      <div class="graph-space">
-       <iframe src="https://www.desmos.com/calculator/rkosx63b4n?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe> 
       </div>
 
-      <div class="subheading">Transformation</div>
+      <!-- CARD 5 -->
+      <div class="card">
 
-      <p>
-     I chose this photo because it represents one of my memorable experiences studying in Malaysia at Sunway College. In the image, one student is passing a phone to another student, symbolizing teamwork, friendship, sharing information, helping and supporting each other during college life. The curve formed by the arms and the phone connection reminded me of an exponential function, so I used the parent function Y=2x as my starting point. After comparing the direction of the curve in the photograph with the parent function, I noticed that the graph needed to be reflected because the original exponential graph increases from left to right, while the curve in my image decreases. To make the graph fit the image more accurately, I adjusted the function by introducing a fraction coefficient. Therefore, I modified the function to y=(½)x to match the direction of the graph.
-      </p>
+        <h2><a href="https://www.desmos.com/calculator/puoqqq7xky">Logarithmic Function</a></h2>
 
-      <p>
-     At first, it was difficult to make the graph match the curve formed by the arms of my friend and me because the original exponential function was too steep compared to the shape in the photograph. To solve this, I experimented with fractional coefficients and applied translations to reduce the steepness of the graph and better align it with the position of our arms. After several adjustments, I found values that allowed the curve to fit the image more naturally and represent a moment of connection and support between the two of us at Sunway College. This resulted in the function  
+        <div class="graph-space">
+          <iframe src="https://www.desmos.com/calculator/puoqqq7xky?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+        </div>
 
-  
+        <div class="subheading">Transformation</div>
 
-y=(7/10)^x+4/5  
+        <p class="no-indent">
+          I chose this photograph because it was taken at one of my favourite restaurants in Genting, Malaysia. The curved wall inside the restaurant immediately reminded me of a logarithmic function because of the way the arch gradually changed direction while becoming steeper near the bottom. Since this dinner was one of my favourite memories in Malaysia, I decided to model the wall curve mathematically. I selected the parent function <var>𝑦 = log(𝑥)</var> as my starting point. After comparing the orientation of the graph with the wall in the photograph, I noticed that the curve in the image decreased from left to right rather than increasing. To match the direction of the wall, I reflected the graph across the y-axis, transforming the function into <var>𝑦 = log(-𝑥)</var>.  
+        </p>
 
-  
+        <p>
+          Initially, I found it difficult to determine the correct vertical stretch factor because the logarithmic curve in the photograph was positioned far from the origin, making it challenging to accurately compare the steepness of the graph with the shape of the wall. To solve this, I adjusted the graph through observation and compared how closely different transformations matched the visible curve in the image. I noticed that the wall became steeper as it approached the lower section of the photograph, which suggested that a vertical stretch was needed rather than a compression. After experimenting with several values, I found that multiplying the logarithmic function by 4 created a curve that more closely matched the shape of the restaurant wall.  
+        </p>
 
-which closely models the position and angle of our arms while passing the phone at Sunway College.
-      </p>
+        <p>
+          I also needed to shift the graph horizontally and vertically so that the logarithmic curve aligned with the visible arch in the image. Through trial and error, I determined that shifting the graph 1.4 units to the left and 6.8 units upward produced the closest fit. This resulted in the function <strong><var>𝑦 = 4 log(-𝑥-1.4) + 6.8</var></strong>, which closely models the wall structure shown in the photograph taken at my favourite restaurant in Genting, Malaysia. 
+        </p>
+        
+        <p class="no-indent">
+          <br><strong>Summary of Transformations:</strong>
+          <br>・Reflection across the 𝑦-axis: <var>log(𝑥) → log(-𝑥)</var>  
+          <br>・Vertical stretch by a factor of 4: <var>log(-𝑥) → 4 log(-𝑥)</var>
+          <br>・Horizontal translation 1.4 units to the left: <var>4 log(-𝑥) → 4 log(-𝑥-1.4)</var>
+          <br>・Vertical translation upward by 6.8 units: <var>4 log(-𝑥-1.4) → 4 log(-𝑥-1.4) + 6.8</var>
+        </p>
+        
+        <div class="subheading">Domain and Range</div>
+        
+        <p class="no-indent">
+          The parent logarithmic function requires the expression inside the logarithm to always remain positive. In my transformed function, 𝑦 = 4 log(-𝑥-1.4) + 6.8 the logarithmic expression must satisfy the condition -𝑥-1.4 > 0, which simplifies to 𝑥 < -1.4. This means values greater than -1.4 cannot be included in the domain because the logarithmic function would become undefined. To ensure the graph remained valid while still closely matching the visible curve of the wall in the photograph, I restricted the domain to <strong>D<var>:{𝑥 ∈ ℝ|-2.76 ≤ 𝑥 ≤ -1.44}</var></strong>
+        </p>
+        
+        <p>
+          This restricted interval allowed the graph to accurately model the visible arch structure shown in the dinner photograph. Because the logarithmic graph is continuous on the restricted interval, the range can be determined by evaluating the function at the endpoints of the domain. By substituting the domain values into the function <var>𝑦 = 4 log(-𝑥-1.4) + 6.8</var>, I obtained approximate output values for the visible portion of the curve. At 𝑥 = -2.76, the function gives an approximate value of 𝑦 ≈ 7.33 and at 𝑥 = -1.44, the function gives an approximate value of 𝑦 ≈1.21. Therefore, the approximate range of the function is <strong>R<var>: {𝑦 ∈ ℝ|0.78 ≤ 𝑦 ≤ 7.34}</var></strong>. This range represents only the visible section of the wall curve shown in the photograph rather than the entire logarithmic function.
+        </p>
 
-      <p>
-     Summary of transformation:  
-
-・Vertical compression by a factor of 7/10 → (7/10)^x 
-
-・Vertical translation upward by 4/5 → 7/10(2^x) +4/5
-      </p>
-
-      <div class="subheading">Domain and Range</div>
-
-      <p>
-The domain of my function is D: {x 
-
-∈ ℝ| -5.07≤ x ≤ 1.8}  
-
-  
-
-I restricted the domain so that the graph only modelled the visible portion of the curve formed by the arms in the photograph. Since the exponential model was created specifically to represent the interaction between my friend and me while passing the phone at Sunway College, the function is only intended to describe the visible section shown in the image.
-      </p>
-
-      <p>
-Because the graph is linear and continuous, the range can be determined by evaluating the function at the endpoints of the domain.  
-
-  
-
-Using the function  
-
-  
-
-y=(7/10)^x+4/5  
-
-  
-
-I obtained the approximate values:  
-
-  
-
-At  
-
-  
-
-X=-5.07, Y≈6.9  
-
-  
-
-and at  
-
-  
-
-X=1.8, Y≈1.33  
-
-  
-
-Therefore, the range if the function is approximately  
-
-  
-
-R: {y∈ℝ| 1.33≤ y ≤6.86}  
-
-  
-
-This means the model is only valid for the visible interaction captured in the photograph rather than the entire exponential function.
-      </p>
-
-    </div>
-
-    <!-- CARD 5 -->
-    <div class="card">
-
-      <h2><a href="https://www.desmos.com/calculator/puoqqq7xky">Logarithmic Function</a></h2>
-
-      <div class="graph-space">
-        <iframe src="https://www.desmos.com/calculator/puoqqq7xky?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
       </div>
 
-      <div class="subheading">Transformation</div>
+      <!-- CARD 6 -->
+      <div class="card">
 
-      <p>
-       I chose this photograph because it was taken at one of my favourite restaurants in Genting, Malaysia. The curved wall inside the restaurant immediately reminded me of a logarithmic function because of the way the arch gradually changed direction while becoming steeper near the bottom. Since this dinner was one of my favourite memories in Malaysia, I decided to model the wall curve mathematically. I selected the parent function y=log(x) as my starting point. After comparing the orientation of the graph with the wall in the photograph, I noticed that the curve in the image decreased from left to right rather than increasing. To match the direction of the wall, I reflected the graph across the y-axis, transforming the function into y=log(-x).  
-      </p>
+        <h2><a href="https://www.desmos.com/calculator/zt9vkioz8i">Linear Function</a></h2>
 
-      <p>
-      Initially, I found it difficult to determine the correct vertical stretch factor because the logarithmic curve in the photograph was positioned far from the origin, making it challenging to accurately compare the steepness of the graph with the shape of the wall. To solve this, I adjusted the graph through observation and compared how closely different transformations matched the visible curve in the image. I noticed that the wall became steeper as it approached the lower section of the photograph, which suggested that a vertical stretch was needed rather than a compression. After experimenting with several values, I found that multiplying the logarithmic function by 4 created a curve that more closely matched the shape of the restaurant wall.  
-      </p>
+        <div class="graph-space">
+          <iframe src="https://www.desmos.com/calculator/zt9vkioz8i?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>  
+        </div>
 
-      <p>
-       I also needed to shift the graph horizontally and vertically so that the logarithmic curve aligned with the visible arch in the image. Through trial and error, I determined that shifting the graph 1.4 units to the left and 6.8 units upward produced the closest fit. This resulted in the function  
+        <div class="subheading">Transformation</div>
 
-  
+        <p class="no-indent">
+          I chose this photograph because it reminds me of one of my memorable experiences in Malaysia. During my time studying there, I often spent time with friends after classes, and this picture captured a simple but meaningful moment of balance, relaxation, and friendship. The way my friend was leaning while standing created a straight diagonal shape that closely resembled a linear function, so I decided to model it mathematically. I selected the parent linear function <var>𝑦=𝑥</var> as my starting point. After comparing the line in the graph with my friend's posture in the photograph, I noticed that the slope of the parent function was slightly too steep. To better match the position and angle of his body, I applied a vertical stretch factor of 1.2, which produced a line that more accurately followed the body alignment in the image. This resulted in the function <var><strong>𝑦 = 1.2𝑥</strong></var>. The final model closely represents the balance and posture captured in this memory from Malaysia.
+        </p>
+        
+        <p class="no-indent">
+          <br><strong>Summary of Transformations:</strong>
+          <br>・Vertical stretch by a factor of 1.2: <var>𝑦 = 𝑥 → 𝑦 = 1.2𝑥</var>
+        </p>
+        
+        <div class="subheading">Domain and Range</div>
 
-Y=4log(-x-1.4) +6.8  
+        <p class="no-indent">
+          The domain of my function is <strong>D<var>:{𝑥 ∈ ℝ|0 ≤ x ≤ 4.36}</var></strong>. I restricted the domain so that the graph only modeled the visible portion of my friend's posture in the photograph. Since the line was intended to represent the section from his left toe to the upper body until the head, the function was not meant to continue beyond the visible part of the image. 
+        </p>
 
-  
+        <p>
+          Because the graph is linear and continuous, the range can be determined by evaluating the function at the endpoints of the domain. Using the function <var>𝑦 = 1.2𝑥</var>, I obtained the approximate values: At 𝑥=0, 𝑦=0, and 𝑥 = 4.36, 𝑦 ≈ 5.23. Therefore, the approximate range of the function is <strong>R<var>:{𝑦 ∈ ℝ|0 ≤ y ≤ 5.23}</var></strong>. This model is only intended to represent the visible posture shown in the photograph rather than the entire linear function.
+        </p>
 
-which closely models the wall structure shown in the photograph taken at my favourite restaurant in Genting, Malaysia. 
-      </p>
-
-      <p>
-       Summary of Transformations:  
-
-  
-
-Reflection across the y-axis:  
-
-Log(x) → log(-x)  
-
-Vertical stretch by a factor of 4:  
-
-Log(-x) → 4log(-x)  
-
-Horizontal translation 1.4 units to the left:  
-
-4log(-x) → 4log(-x-1.4)  
-
-Vertical translation upward by 6.8 units:  
-
-4log(-x-1.4) → 4log(-x-1.4) +6.8 
-      </p>
-
-      <div class="subheading">Domain and Range</div>
-
-      <p>
-      The parent logarithmic function requires the expression inside the logarithm to always remain positive. In my transformed function, y=4log(-x-1.4) +6.8 the logarithmic expression must satisfy the condition –x-1.4>0, which simplifies to x<-1.4. This means values greater than -1.4 cannot be included in the domain because the logarithmic function would become undefined. To ensure the graph remained valid while still closely matching the visible curve of the wall in the photograph, I restricted the domain to   
-
-  
-
-D: {x∈ℝ |-2.76≤x≤-1.44} 
-      </p>
-
-      <p>
-       This restricted interval allowed the graph to accurately model the visible arch structure shown in the dinner photograph.  
-
-  
-
-Because the logarithmic graph is continuous on the restricted interval, the range can be determined by evaluating the function at the endpoints of the domain. By substituting the domain values into the function y=4log(-x-1.4) +6.8, I obtained approximate output values for the visible portion of the curve.   
-
-  
-
-At x=-2.76, the function gives an approximate value of y≈7.33  
-
-  
-
-and at x=-1.44, the function gives an approximate value of y≈1.21.  
-
-  
-
-Therefore, the approximate range of the function is  
-
-  
-
-R: {y∈ℝ |0.78≤y≤7.34}  
-
-  
-
-This range represents only the visible section of the wall curve shown in the photograph rather than the entire logarithmic function.
-      </p>
-
-    </div>
-
-    <!-- CARD 6 -->
-    <div class="card">
-
-      <h2><a href="https://www.desmos.com/calculator/zt9vkioz8i">Linear Function</a></h2>
-
-      <div class="graph-space">
-      <iframe src="https://www.desmos.com/calculator/zt9vkioz8i?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>  
       </div>
 
-      <div class="subheading">Transformation</div>
+      <!-- CARD 7 -->
+      <div class="card">
 
-      <p>
-      I chose this photograph because it reminds me of one of my memorable experiences in Malaysia. During my time studying there, I often spent time with friends after classes, and this picture captured a simple but meaningful moment of balance, relaxation, and friendship. The way my friend was leaning while standing created a straight diagonal shape that closely resembled a linear function, so I decided to model it mathematically. I selected the parent linear function y=x as my starting point. After comparing the line in the graph with my friend's posture in the photograph, I noticed that the slope of the parent function was slightly too steep. To better match the position and angle of his body, I applied a vertical stretch factor of 1.2, which produced a line that more accurately followed the body alignment in the image. This resulted in the function  
+        <h2><a href="https://www.desmos.com/calculator/y4k9mqii1b">Reciprocal of Linear Function</a>
+        </h2>
 
+        <div class="graph-space">
+          <iframe src="https://www.desmos.com/calculator/y4k9mqii1b?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe> 
+        </div>
+
+        <div class="subheading">Transformation</div>
+
+        <p class="no-indent">
+          I chose this photo because it involved the team to push our physical capabilities and flexibility on the floor to mimic the hyperbolic curvature and nature of a reciprocal linear function by tracing the shape of our spines. To showcase both branches of curves from different quadrants, we chose to take the picture from above, given that we couldn’t defy gravity, by having two of us lie down on the floor in a half-curled-up position on our side as we take inspiration from the parent function <var>𝑦 = ⅟𝑥</var>. We placed ourselves in a way where both the vertical and horizontal asymptotes are present, by leaving a gap between the subjects. By having the picture taken at the right angle, we managed to keep our graph in the first and third quadrant, without the needs of making any reflections.
+        </p>
+         
+        <p>
+          The first step we did after that was rotate the image at a degree of 190° to make the bodies parallel to the axes of the plane. We then used the parent function, where the asymptotes are respectively at the value of 0, to find the suitable compression or stretch factors, and we believed that applying horizontal compression would be able to make the line trace our spines best. Thus, our current equation was <var>𝑦 = 1⁄(4𝑥)</var>, where <var>k</var> = 4, which meant a horizontal compression of factor ¼ was applied. After securing a graph that snaps onto our spines greatly, we realigned the photo by having the girl in white’s hand touching the 𝑦-axis, to represent 𝑥=0, and the point where her feet touch the white wall at the 𝑥-axis, which is 𝑦=0. We did so to keep the values positive, that is in the first quadrant, because distances can never be negative in the real world.
+        </p>
+
+        <p>
+          As the photo shifted, our graph must as well; which meant we had to first identify our new asymptote values, since the image has been shifted away from the origin, to apply shifting parameters to the equation. Therefore, we first determined where the vertical asymptote lies based on the picture, which was at 𝑥 = 3.5, because the denominator cannot equal zero, creating a strict domain restriction where the function is undefined; then we determined the horizontal asymptote, which appears at 𝑦 = 3.25. After that, we shifted the graph 3.5 units to the right and 3.25 units upward, leaving us with the final equation of: <strong><var>𝑦 = 1/[4(𝑥-3.5)] + 3.25</var></strong> 
+        </p>
+
+        <p class="no-indent">
+          <br><strong>Summary of Transformations:</strong>
+          <br>• No Vertical Compression or Stretch, <var>a = 1 → 1/x</var> 
+          <br>• Horizontal Compression of factor ¼, where <var>k = 4 → 1/(4x)</var> 
+          <br>• Horizontal Translation of 3.5 units to the right → <var>1/[4(x-3.5)]</var>
+          <br>• Vertical Translation of 3.25 units upward → <var>1/[4(x-3.5)] + 3.25</var>
+        </p>
+
+        <div class="subheading">Domain and Range</div>
+
+        <p class="no-indent">
+          The original parent function of the reciprocal of linear functions is <strong>D<var>:{𝑥 ∈ ℝ|𝑥 ≠ 0}</var></strong> and </strong>R<var>:{𝑦 ∈ ℝ|𝑦 ≠ 0}</var></strong>, where, as 𝑥 → ∞ 𝑦 → 0, 𝑥 → 0⁺ 𝑦 → ∞, 𝑥 → 0⁻ 𝑦 → -∞, 𝑥 → -∞ 𝑦 → 0. However, with the intent of only modelling the spine of our bodies, we had to restrict our transformed function. We had to apply restrictions that align with our transformed equation and their shifted asymptotes placement, which was: Vertical Asymptote at 𝑥 = 3.5 and Horizontal Asymptote at 𝑦 = 3.25. We chose to restrict the domain from the girl’s shoulder until the boy’s shoulder. As for the range, we restrict it to each subject’s ankles.
+        </p>
+
+        <p>
+          The domain of our reciprocal linear function is <strong>D:<var>{𝑥 ∈ ℝ|1.35 ≤ 𝑥 ≤ 5.3}</var></strong>. We had the domain restricted that way to ensure the line graph only traces our bodies from the shoulders until the ankle. The graph only starts at 𝑥 = 1.35 units because the girl’s shoulders started from there; conversely, the graph ends at 𝑥 = 5.3 units because the inverted boy’s shoulders ended as far as that point.
+        </p>
+
+        <p>
+          The range of this graph has to be restricted independently from the domain because they go until both ends of the infinity, even if the domain has been restricted, which violates real-world value, since this is the normal end behaviours of reciprocal linear functions. Therefore, we traced each branches 𝑦-values to stop at ankle-level of each subjects, which gave us the range of <strong>R<var>:{𝑦 ∈ ℝ|0.3 ≤ 𝑦 ≤ 6.5}</var></strong> for this function, as the girl’s ankle stops at 𝑦 = 0.3 units and the boy's at 𝑦 = 6.5 units.
+        </p>
+
+        <p>
+          Therefore, our end behaviours are 𝑥 → 1.35 𝑦 → 3.25, 𝑥 → 3.5⁻ 𝑦 → 0.3, 𝑥 → 3.5⁺ 𝑦 → 6.5, 𝑥 → 5.3 𝑦 → 3.25.  
+        </p>
   
-
-Y=1.2x.  
-
+        <p>
+          Other than that, we had to evaluate the scale conversions of this model because the image was magnified beyond simple real-world unit conversions, like 1 unit = 1 m. For the x-axis, we determined that 1 unit = 20 cm because the length of our bent arm from our shoulders was approximately 30 cm, and the product from multiplying 1.35 units by 20 cm was realistically close which is 27 cm. For the y-axis, we chose 1 unit = 25 cm because the distance of the boy’s ankle from the white wall was approximately ~160 cm, which our product of multiplying 6.5 units by 25 cm fetched a close value to the real distance, which is 162.5 cm. So, we were able to find a suitable unit conversion for our magnified image to real-world values.
+        </p>
   
-
-The final model closely represents the balance and posture captured in this memory from Malaysia.
-      </p>
-
-      <p>
-      Summary of Transformations:  
-
-  
-
-Vertical stretch by a factor of 1.2:  
-
-Y=x → y=1.2x
-      </p>
-
-      <div class="subheading">Domain and Range</div>
-
-      <p>
-      The domain of my function is D:{x∈ℝ| 0≤x≤4.36}. I restricted the domain so that the graph only modeled the visible portion of my friend's posture in the photograph. Since the line was intended to represent the section from his left toe to the upper body until the head, the function was not meant to continue beyond the visible part of the image. 
-      </p>
-
-      <p>
-      Because the graph is linear and continuous, the range can be determined by evaluating the function at the endpoints of the domain.  
-
-  
-
-Using the function y=1.2x, I obtained the approximate values:  
-
-  
-
-At  
-
-  
-
-x=0, y=0  
-
-  
-
-and at  
-
-  
-
-X=4.36, y≈5.23  
-
-  
-
-Therefore, the approximate range of the function is  
-
-  
-
-R: {y∈ℝ| 0≤y≤5.23}  
-
-  
-
-This model is only intended to represent the visible posture shown in the photograph rather than the entire linear function.
-      </p>
-
-    </div>
-
-    <!-- CARD 7 -->
-    <div class="card">
-
-      <h2><a href="https://www.desmos.com/calculator/y4k9mqii1b">Reciprocal of Linear Function</a>
-</h2>
-
-      <div class="graph-space">
-      <iframe src="https://www.desmos.com/calculator/y4k9mqii1b?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe> 
       </div>
 
-      <div class="subheading">Transformation</div>
+      <!-- CARD 8 -->
+      <div class="card">
 
-      <p>
-I chose this photo because it involved the team to push our physical capabilities and flexibility on the floor to mimic the hyperbolic curvature and nature of a reciprocal linear function by tracing the shape of our spines. To showcase both branches of curves from different quadrants, we chose to take the picture from above, given that we couldn’t have defy gravity, by having two of us lie down on the floor in a half-curled-up position on our side as we take inspiration from the parent function y = 1/x. We placed ourselves in a way where both the vertical and horizontal asymptotes are present, by leaving a gap between the subjects. By having the picture taken at the right angle, we managed to keep our graph in the first and third quadrant, without making any reflections. 
-	The first step we did was rotate the image at a degree of 190° to make the bodies parallel to the axes of the plane. We then used the parent function, where the asymptotes are respectively at the value of 0, to find the suitable compression or stretch factors, and we believed that applying horizontal compression would be able to make the line trace our spines best. Thus, our current equation was y = 1 / (4x), where k = 4, which meant a horizontal compression of factor ¼ was applied. After securing a graph that snaps onto our spines greatly, we realigned the photo by having the student in white’s hand touching the y-axis, to represent x = 0, and the point where her feet touch the white wall as y = 0. We did so to keep the values positive, that is in the first quadrant, because distances can never be negative in the real world. 
-	As the photo shifted, our graph must as well; which meant we had to first identify our asymptote values, since the image has been shifted away from the origin, to apply shifting parameters to the equation. Therefore, we first determined where the vertical asymptote lies based on the picture, which was at x = 3.5, because the denominator cannot equal zero, creating a strict domain restriction where the function is undefined; then we determined the horizontal asymptote, which appears at y = 3.25. After that, we shifted the graph 3.5 units to the right and 3.25 units upward, leaving us with the final equation of: y = 1/[4(x-3.5)] + 3.25 
-      </p>
+        <h2><a href="https://www.desmos.com/calculator/fssppbd9vm">Reciprocal of Quadratic Function</a></h2>
+        
+        <div class="graph-space">
+          <iframe src="https://www.desmos.com/calculator/fssppbd9vm?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe> 
+        </div>
+        
+        <div class="subheading">Transformation</div>
+        
+        <p class="no-indent">
+          I chose this photo because we were originally thinking of modelling empty chairs placed back-to-back, as their seats perfectly models a reciprocal of quadratic function, but then, we had a bright, fun spark of idea to sit on them and raising our legs out as straight as we could in the air. We had a lot of fun posing for this function as we had to attempt to perfectly mirror each other, and, as a result of our fruitful endurance, we were able to mimic an almost perfectly identical shape of the function. Therefore, to start modelling a graph, we used <var>𝑦 = 1/𝑥²</var> which has both vertical and horizontal asymptotes at value of 0, x = 0 and y = 0 respectively.  
+        </p>
+        
+        <p>
+          While the graph and picture are at the origin, we started our transformation by finding a suitable compression or stretch factor. We found that having parameter <var>a</var> = ⅐ had the graph perfectly follow our body shape. Thus, the equation is first transformed into <var>𝑦 = 1⁄(7𝑥²)</var> which meant the graph was vertically compressed by a factor of ⅐.
+        </p>
+        
+        <p>
+          After getting the right shape, we began translating everything to have them placed in the first quadrant where all values are positive. We first rearranged the image to the position where the girl on the left-side's feet touches the 𝑦-axis, simultaneously while the chair legs touch the 𝑥-axis. Following that, we determined where our asymptotes are. For the model’s vertical asymptotes, we chose to place this where the leg of both chairs touches one another, which was at 𝑥 = 4.55, between the two subjects. And the horizontal asymptote for this graph was chosen where the chair seat’s bottoms are, which we found was at 𝑦 = 1.85. After finding these asymptotes coordinates from the photo, we could easily apply the translation parameters easily, where <var>d</var> = 4.55 and <var>c</var> = 1.85, so, our final equation is <strong><var>𝑦 = 1/[7(𝑥-4.55)²] + 1.85</var></strong>
+        </p>
 
-      <p>
-Summary of Transformations: 
-• No Vertical Compression or Stretch, a = 1 → 1/x 
-• Horizontal Compression of factor ¼, where k = 4 → 1/(4x) 
-• Horizontal Translation of 3.5 units to the right → 1/[4(x-3.5)] 
-• Vertical Translation of 3.25 units upward → 1/[4(x-3.5)] + 3.25
-      </p>
+        <p class="no-indent">
+          <br><strong>Summary of Transformations:</strong>  
+          <br>• Vertical Compression of a factor of ⅐, where <var>a = ⅐ → 1/(7𝑥²)</var>  
+          <br>• No Horizontal Compression or Stretch, <var>k = 1 → 1/(7𝑥²)</var>
+          <br>• Horizontal Translation of 4.55 units to the right → <var>1/[7(𝑥-4.55)²]</var>  
+          <br>• Vertical Translation of 1.85 units upward → <var>1/[7(𝑥-4.55)²] + 1.85</var>
 
-      <div class="subheading">Domain and Range</div>
+        </p>
 
-      <p>
-       The original parent function of the reciprocal of linear functions is D: {𝑥 ∈ ℝ | 𝑥 ≠ 0} and R: {𝑦 ∈ ℝ | 𝑦 ≠ 0}, where, as 𝑥 → ∞ 𝑦 → 0, 𝑥 → 0⁺ 𝑦 → ∞, 𝑥 → 0⁻ 𝑦 → -∞, 𝑥 → -∞ 𝑦 → 0. However, with the intent of only modelling the spine of our bodies, we had to restrict our transformed function. We had to apply restrictions that align with our transformed equation and their shifted asymptotes placement, which was Vertical Asymptote at x = 3.5 and Horizontal Asymptote at y = 3.25. We chose to restrict the domain from the girl’s shoulder until the boy’s shoulder. As for the range, we restrict it to each subject’s ankles.
-      </p>
+        <div class="subheading">Domain and Range</div>
 
-      <p>
-       The domain of our reciprocal linear function is D: {𝑥 ∈ ℝ | 1.35 ≤ 𝑥 ≤ 5.3}. We had the domain restricted that way to ensure the line graph only traces our bodies from the shoulders until the ankle. The graph only starts at x = 1.35 units because the girl’s shoulders started from there; conversely, the graph ends at x = 5.3 units because the inverted boy’s shoulders ended as far as that point.
-      </p>
+        <p class="no-indent">
+          The original parent function of the reciprocal of quadratic functions, similar to their reciprocal of linear cousin, is <strong>D<var>:{𝑥 ∈ ℝ|𝑥 ≠ 0}</var></strong> and <strong>R<var>:{𝑦 ∈ ℝ|𝑦 > 0}</var></strong>, where, as 𝑥 → ∞ 𝑦 → 0, 𝑥 → 0⁺ 𝑦 → ∞, 𝑥 → 0⁻ 𝑦 → ∞, 𝑥 → -∞ 𝑦 → 0. However, because we are only modelling the fluid direction of the outline of our body shapes, we had to restrict our transformed function. We had to apply restrictions that align with our transformed equation and their shifted asymptotes placement, which were: Vertical Asymptote at 𝑥 = 4.55 and Horizontal Asymptote at 𝑦 = 1.85. We restricted the domain from each of the girls’ feet. As for the range, we restrict it to our shoulder height.
+        </p>
 
-      <p>
-       The range of this graph has to be restricted independently from the domain because they go until both ends of the infinity even though the domain has been restricted, which violates real-world value, since it is the normal end behaviours of reciprocal linear functions. Therefore, we traced each branches y-axis to stop at ankle-level of each subjects, which gotten us the range of R: {𝑦 ∈ ℝ | 0.3 ≤ 𝑦 ≤ 6.5} for this function, as the girl’s ankle stops at y = 0.3 units and the boy at y = 6.5 units.
-      </p>
+        <p>
+          The domain of our reciprocal quadratic function is <strong>D<var>:{𝑥 ∈ ℝ|0.09 ≤ 𝑥 ≤ 8.85, 𝑥 ≠ 4.55}</var></strong>.The domain was restricted that way to ensure each one of the lines of the graph only traces both of our bodies from the feet up until the shoulder. The graph only starts at 𝑥 = 0.09 units because the girl on the left’s feet started from that point; conversely, the graph ends at 𝑥 = 8.85 units because the girl on the right’s feet ended as far as that point, with a discontinuity at 𝑥 = 4.55 caused from the gap between the two subjects and the distance between the two chair’s backrest.
+        </p>
 
-      <p>
-       Therefore, our end behaviours are 𝑥 → 1.35 𝑦 → 3.25, 𝑥 → 3.5⁻ 𝑦 → 0.3, 𝑥 → 3.5⁺ 𝑦 → 6.5, 𝑥 → 5.3 𝑦 → 3.25.  
+        <p>
+          The range of this graph has to be restricted at 𝑦 = 3.95 because the shoulder height is limited to y = 3.95 units. Thus, the range of this function is <strong>R<var>:{𝑦 ∈ ℝ|1.85 < 𝑦 ≤ 3.95}</var></strong>, since the shoulder height is at 𝑦 = 3.95 units and the chair seats are at the height of 𝑦 = 1.85 units.
+        </p>
 
-	Other than that, we had to evaluate the scale conversions of this model because the image was magnified beyond simple real-world unit conversions, like1 unit = 1 m. For the x-axis, we determined that 1 unit = 20 cm because the length of our bent arm from our shoulders was approximately 30 cm, and the product from multiplying 1.35 units by 20 cm was realistically close which is 27 cm. For the y-axis, we chose 1 unit = 25 cm because the distance of the boy’s ankle from the white wall was approximately ~160 cm, which our product of multiplying 6.5 units by 25 cm fetched a close value to the real distance, which is 162.5 cm. So, we were able to find a suitable unit conversion for our magnified image to real-world values.
-      </p>
+        <p>
+          Therefore, our end behaviours are 𝑥 → 0.09 𝑦 → 1.85, 𝑥 → 4.55⁻ 𝑦 → 3.95, 𝑥 → 4.55⁺ 𝑦 → 3.95, 𝑥 → 8.85 𝑦 → 1.85. 
+        </p>
 
-    </div>
+        <p>
+          Finally, we had to evaluate the scale conversions of this model because the image was magnified beyond simple real-world unit conversions. For the 𝑥-units, we found that 1 unit = 20 cm. We did this by calculating the gap between the two student’s backs, which was approximately a ruler’s length: ~15 cm. The last point of each student are 𝑥 = 4.3 units for the girl on the left and x = 4.8 units for the girl on the right. Therefore, the gap between the two girl’s backs, which is 4.8-4.3 = 0.5 units, based on this conversion, the result is 10 cm, which is close to the approximate gap length. As for the y-axis, we chose 1 unit = 25 cm because the height of a typical college classroom chair seat from the ground is ~50 cm. And, under this unit conversion, the result is close, getting 46.25 cm from converting 1.85 units by multiplying it with 25 cm. In essence, we were able to find a suitable unit conversions that relate to real-world values.
+        </p>
 
-    <!-- CARD 8 -->
-    <div class="card">
-
-      <h2><a href="https://www.desmos.com/calculator/fssppbd9vm">Reciprocal of Quadratic Function</a></h2>
-
-      <div class="graph-space">
-       <iframe src="https://www.desmos.com/calculator/fssppbd9vm?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe> 
       </div>
 
-      <div class="subheading">Transformation</div>
+      <!-- CARD 9 -->
+      <div class="card">
 
-      <p>
-      I chose this photo because we were originally thinking of modelling empty chairs placed back-to-back, as their seats perfectly models a reciprocal of quadratic function, but then, we had a bright, fun spark of idea to raise our legs out as straight as we could in the air. We had a lot of fun posing for this function as we had to attempt to perfectly mirror each other, and, as a result of our fruitful endurance, we were able to mimic an almost perfect shape of the function. Therefore, to start modelling a graph, we used y = 1/x² which has both vertical and horizontal asymptotes at value of 0, x = 0 and y = 0 respectively.  
-      </p>
+        <h2><a href="https://www.desmos.com/calculator/tpx0ooqfql">Absolute Value Function</a>
+        </h2>
 
-      <p>
-       While the graph and picture are at the origin, we started our transformation by finding a suitable compression or stretch factor. We found that having parameter a = 1/7 had the graph perfectly follow our body shape. Thus, the equation is first transformed into y = 1/7x² which meant the graph was vertically compressed by a factor of 1/7. 
-      </p>
+        <div class="graph-space">
+          <iframe src="https://www.desmos.com/calculator/tpx0ooqfql?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>  
+        </div>
 
-      <p>
-       After getting the right shape, we began translating everything to have them placed in the first quadrant where all values are positive. We first rearranged the image to the position where the girl on the left-side's feet touches the y-axis, simultaneously while the chair legs touch the x-axis. Following that, we determined where our asymptotes are. For the model’s vertical asymptotes, we chose to place this where the leg of both chairs touches one another, which was at x = 4.55, between the two subjects. Consequently, the horizontal asymptote for this graph was chosen where the chair seat’s bottoms are, which we found was y = 1.85. After finding these asymptotes coordinates from the photo, we could easily apply the translation parameters easily, where d = 4.55 and c = 1.85, so, our final equation is y = 1/[7(x-4.55)²] + 1.85 
-      </p>
+        <div class="subheading">Transformation</div>
 
-      <p>
-       Summary of Transformations:  
+        <p class="no-indent">
+          I chose this photo because it captures the slightly humourous and playful moment I had with my group. The boy is doing a dramatic, final-curtain-call-like bow in his attempt of mimicking an absolute value function by raising his arms at a certain angle to the air. This posture, the one that required him to throw away his shame and public face among us, had created a perfect silhouette of his arms outline that models an absolute value function. Therefore, we once again used the parent function of an absolute value function, that is <var>𝑦 = |𝑥|</var>, to find our parameters value by having the image placed at the origin point of the cartesian plane.
+        </p>
 
-• Vertical Compression of a factor of 1/7, where a = 1/7 → 1/7x²  
+        <p>
+          To start things off, we investigate a suitable compression or stretch factors that can make the graph line latch onto the boy’s arm silhouette better. We found that a Vertical Stretch by a factor of 3 and Horizontal Stretch by a factor of 4, which meant the parameters are <var>a</var> = 3 and <var>k</var> = ¼ respectively, perfectly do the job. Thus, our equation is transformed into <var>𝑦 = 3|¼(𝑥)|</var>. 
+        </p>
+        
+        <p>
+          After acquiring the shape that we wanted, we began translating everything. First, we move the image to a logical placement, that is by having it placed in the first quadrant. We chose to have the boy’s feet exactly touching the 𝑥-axis, and his right hand’s fingertips touch the 𝑦-axis. We first shift the graph to the right by having the sharp vertex placed directly in the middle of his body, which was at 𝑥 = ¹⁰⁄₃, and this resulted in <var>d</var> = ¹⁰⁄₃, leaving us with the equation of <var>𝑦 = 3|¼(𝑥-¹⁰⁄₃)|</var>. Then, we shift the equation up, until where the graph lines trace his under-arms profoundly, which was at 𝑦 = 4.05 units; meaning <var>c</var> = 4.05. Ultimately, the final equation is <strong><var>𝑦 = 3|¼(𝑥-¹⁰⁄₃)| + 4.05</var></strong>
+        </p>
 
-• No Horizontal Compression or Stretch, k = 1 → 1/7x²  
+        <p class="no-indent">
+          <br><strong>Summary of Transformations:</strong>
+          <br>• Vertical Stretch of factor 3, where <var>a = 3 → 3|𝑥|</var> 
+          <br>• Horizontal Stretch of factor 4, where <var>k = ¼ → 3|¼(𝑥)|</var>
+          <br>• Horizontal Translation of ¹⁰⁄₃ units to the right → <var>3|¼(𝑥-¹⁰⁄₃)|</var> 
+          <br>• Vertical Translation of 4.05 units upward → <var>3|¼(𝑥-¹⁰⁄₃)| + 4.05</var>
+        </p>
+        
+        
+        <div class="subheading">Domain and Range</div>
 
-• Horizontal Translation of 4.55 units to the right → 1/[7(x-4.55)²]  
+        <p class="no-indent">
+          The original parent function of the absolute value functions is <strong>D<var>:{𝑥 ∈ ℝ}</var></strong> and <strong>R<var>:{𝑦 ∈ ℝ|𝑦 ≥ 0}</var></strong>, where, as 𝑥 → ∞ 𝑦 → ∞, 𝑥 → 0⁺ 𝑦 → 0, 𝑥 → 0⁻ 𝑦 → 0, 𝑥 → -∞ 𝑦 → ∞. But we had to restrict the domain of the function because the boy’s arms do not reach out until indefinitely in real life.
+        </p>
 
-• Vertical Translation of 1.85 units upward → 1/[7(x-4.55)²] + 1.85  
-      </p>
+        <p>
+          So, we then chose the points to stop the graph lines and decided to limit it to both ends of the boy’s sleeves, from the right to the left. The end of the right-arm sleeve is at 𝑥 = 0.45 units, whereas the end of the left-arm sleeve is at 𝑥 = 5.75 units. Thus, the domain of our absolute value function is <strong>D<var>:{𝑥 ∈ ℝ|0.45 ≤ 𝑥 ≤ 5.75}</var></strong>
+        </p>
+        
+        <p>
+          We decided not to intentionally restrict the range for this function to show the symmetrical nature of an absolute value function. To keep the model grounded to real-world laws and logic, the boy pushed his head so prominently forward and downward so that we could place the vertex somewhere near his nose-bridge. Therefore, the line bounces sharply at the point where the graph reaches where his nose is, which was at 𝑦 = 4.05. Instead of modeling just his under-arm silhouette, we were able to trace the line from the wrist down the arm to his nose then up until the next wrist.
+        </p>
 
-      <div class="subheading">Domain and Range</div>
+        <p>
+          Therefore, our end behaviours are 𝑥 → 0.45 𝑦 → ~6.2125, 𝑥 → ~3.33⁻ 𝑦 → 4.05, 𝑥 → ~3.33⁺ 𝑦 → 4.05, 𝑥 → 5.75 𝑦 → ~5.8625
+        </p>
 
-      <p>
-      The original parent function of the reciprocal of quadratic functions, similar to their reciprocal of linear cousin, is D: {𝑥 ∈ ℝ | 𝑥 ≠ 0} and R: {𝑦 ∈ ℝ | 𝑦 > 0}, where, as 𝑥 → ∞ 𝑦 → 0, 𝑥 → 0⁺ 𝑦 → ∞, 𝑥 → 0⁻ 𝑦 → ∞, 𝑥 → -∞ 𝑦 → 0. However, because we are only modelling the fluid direction of the outline of our body shapes, we had to restrict our transformed function. We had to apply restrictions that align with our transformed equation and their shifted asymptotes placement, which was Vertical Asymptote at x = 4.55 and Horizontal Asymptote at y = 1.85. We restricted the domain from each of the girls’ feet. As for the range, we restrict it to our shoulder height.
-      </p>
-
-      <p>
-      The domain of our reciprocal quadratic function is D: {𝑥 ∈ ℝ | 0.09 ≤ 𝑥 ≤ 8.85, 𝑥 ≠ 4.55}.The domain was restricted that way to ensure each one of the lines of the graph only traces both of our bodies from the feet up until the shoulder. The graph only starts at x = 0.09 units because the girl on the left’s feet started from that point; conversely, the graph ends at x = 8.85 units because the girl on the right’s feet ended as far as that point, with a discontinuity at x = 4.55 caused from the gap between the two subjects and the distance between the two chair’s backrest.
-      </p>
-
-      <p>
-      The range of this graph has to be restricted at y = 3.95 because the shoulder height is limited to y = 3.95 units. Thus, the range of this function is R: {𝑦 ∈ ℝ | 1.85 < 𝑦 ≤ 3.95}, since the shoulder height is at y = 3.95 units and the chair seats are at the height of y = 1.85 units.
-      </p>
-
-      <p>
-     Therefore, our end behaviours are 𝑥 → 0.09 𝑦 → 1.85, 𝑥 → 4.55⁻ 𝑦 → 3.95, 𝑥 → 4.55⁺ 𝑦 → 3.95, 𝑥 → 8.85 𝑦 → 1.85. 
-      </p>
-
-      <p>
-      Finally, we had to evaluate the scale conversions of this model because the image was magnified beyond simple real-world unit conversions. For the x-axis, we found that 1 unit = 20 cm. We did this by calculating the gap between the two student’s backs, which was approximately a ruler’s length: ~15 cm. The last point of each student are x = 4.3 units for the girl on the left and x = 4.8 units for the girl on the right. Therefore, the gap between the two girl’s backs, which is 4.8 - 4.3 = 0.5 units, based on this conversion is 10 cm, which is close to the approximate gap length. As for the y-axis, we chose 1 unit = 25 cm because the height of a typical college classroom chair seat from the ground is ~50 cm. And, under this unit conversion, the result is close, getting 46.25cm from converting 1.85 units by multiplying it with 25cm. In essence, we were able to find a suitable unit conversion that relates to real-world values.
-      </p>
-
-    </div>
-
-    <!-- CARD 9 -->
-    <div class="card">
-
-      <h2><a href="https://www.desmos.com/calculator/tpx0ooqfql">Modulus Graph</a>
-</h2>
-
-      <div class="graph-space">
-      <iframe src="https://www.desmos.com/calculator/tpx0ooqfql?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>  
+        <p>
+          Then, we had to construct a unit conversion as the picture’s size doesn’t allow for simple conversions. For the 𝑦-unit conversion, we find that the conversion of 1 unit = 30cm matches really well. We found this by estimating the boy’s chest height from the floor, which was around 115 cm, and calculated the unit by dividing it with where his chest was in the photo, around 𝑦 = 3.85. The product of 115 cm / 4.05 units was approximately ~29.87, so we rounded it up to 30 cm. Subsequently, as for the 𝑥-unit conversion, we find 1 unit = 20 cm to be a realistic one. We got this by calculating the length of the boy’s right hand; from the y-axis, where his fingertips are, to his wrist, which was 0.45 units to the right of it. We used Pythagorean theory to calculate his hand length, where the 𝑥-length was (0.45-0) units times 20 cm = 9, and 𝑦-length was (6.75-6.25) units times 30 cm = 15, which fetched the result of √306 or approximately ~17 cm, which is accurately close to the boy’s hand length of ~15.5 cm. Thus, concluding our real-world unit conversions to the magnified image.
+        </p>
+        
       </div>
 
-      <div class="subheading">Transformation</div>
+    </section>
 
-      <p>
-      
-	I chose this photo because it captures the slightly humourous and playful moment I had with my group. The boy is doing a dramatic, final-curtain-call-like bow in his attempt of mimicking an absolute value function by raising his arms at a certain angle to the air. This posture, the one that required him to throw away his shame and public face among us, had created a perfect silhouette of his arms outline that models an absolute value function. Therefore, we once again used the parent function of an absolute value function, that is y = |x|, to find our parameters value by having the image placed at the origin point of the cartesian plane. 
-	To start things off, we investigate a suitable compression or stretch factors that can make the graph line latch onto the boy’s arm silhouette better. We found that a Vertical Stretch by a factor of 3 and Horizontal Stretch by a factor of 4, which meant the parameters are a = 3 and k = ¼ respectively, perfectly do the job. Thus, our equation is transformed into y = 3|¼(x)|. 
-
-	After acquiring the shape that we wanted, we began translating everything. First, we move the image to a logical placement, that is by having it placed in the first quadrant. We chose to have the boy’s feet exactly at touching the x-axis, and his right hand’s fingertips touch the y-axis. We first shift the graph to the right by having the sharp vertex placed directly in the middle of his body or spine, which was at x = 10/3, and this resulted in d = 10/3, leaving us with the equation of y = 3|¼(x-10/3)|. Then, we shift the equation up, until where the graph lines trace his under-arms profoundly, by 4.05 units, where c = 4.05, meaning the final equation is y = 3|¼(x-10/3)| + 4.05 
-
- 
-
-Summary of Transformations: 
-
-• Vertical Stretch of factor 3, where a = 3 → 3|x| 
-• Horizontal Stretch of factor 4, where k = ¼ → 3|¼(x)| 
-• Horizontal Translation of 10/3 units to the right → 3|¼(x-10/3)| 
-• Vertical Translation of 4.05 units upward → 3|¼(x-10/3)| + 4.05
-      </p>
-
-
-
-      <div class="subheading">Domain and Range</div>
-
-      <p>
-  
-	The original parent function of the absolute value functions is D: {𝑥 ∈ ℝ} and R: {𝑦 ∈ ℝ | 𝑦  ≥ 0}, where, as 𝑥 → ∞ 𝑦 → ∞, 𝑥 → 0⁺ 𝑦 → 0, 𝑥 → 0⁻ 𝑦 → 0, 𝑥 → -∞ 𝑦 → ∞. But we had to restrict the domain of the function because the boy’s arms do not reach out until indefinitely in real life.  
-	So, we then chose the points to stop the graph lines and decided to limit it to both ends of the boy’s sleeves, from the right to the left. The end of the right-arm sleeve is at x = 0.45 units, whereas the end of the left-arm sleeve is at x = 5.75 units. Thus, the domain of our absolute value function is D: {𝑥 ∈ ℝ | 0.45 ≤ 𝑥 ≤ 5.75}. 
-
-	We decided not to restrict the range for this function to show the symmetrical nature of an absolute value function. To keep the model grounded to real-world laws and logic, the boy pushed his head so prominently forward and downward so that we could place the vertex somewhere near his nose-bridge. Therefore, the line turns sharply at the point where the graph reaches where his nose is. Instead of modeling just his under-arm silhouette, we were able to trace the line from the wrist down the arm to his nose then up until the next wrist. 
-	Therefore, our end behaviours are 𝑥 → 0.45 𝑦 → ~6.2125, 𝑥 → ~3.33⁻ 𝑦 → 4.05, 𝑥 → ~3.33⁺ 𝑦 → 4.05, 𝑥 → 5.75 𝑦 → ~5.8625 
-	Then, we had to construct a unit conversion as the picture’s size doesn’t allow for simple conversions. As for the x-unit conversion, we find 1 unit = 20cm to be a realistic one. We got this by calculating the boy’s right hand from the y-axis, which was 0.45 units to the right of it. We used Pythagorean theory to calculate his hand, where the x-length was (0.45 - 0) units times 20cm = 9, and y-length was (6.75 - 6.25) units times 20cm = 10, where the result was approximately √181 or ~13.45 cm, which is accurately close to the boy’s hand length of ~15cm. Subsequently, we find that the y-unit conversion is 1 unit = 30cm. We found this by estimating the boy’s chest height from the floor, which was around 115cm, and calculated the unit by dividing it with where his chest was in the photo, around y = 3.85. The product is ~29.87, so we rounded it up to 30 cm. Thus, concluding our real-world unit conversions to the magnified image.
-      </p>
-      
-
-    </div>
-
-  </section>
-
-</body>
+  </body>
 </html>
